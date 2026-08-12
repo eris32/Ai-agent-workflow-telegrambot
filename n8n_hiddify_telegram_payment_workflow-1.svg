@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050914"/>
+      <stop offset="1" stop-color="#0b1324"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#19b7ff"/><stop offset="1" stop-color="#216cff"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9b6cff"/><stop offset="1" stop-color="#5f43d8"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#31e981"/><stop offset="1" stop-color="#16a86a"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#17233a" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#8ea2c5"/>
+    </marker>
+    <style>
+      .title{font:700 42px Arial,sans-serif;fill:#fff}.subtitle{font:400 23px Arial,sans-serif;fill:#9fb1cf}
+      .nodeTitle{font:700 20px Arial,sans-serif;fill:#fff}.small{font:400 14px Arial,sans-serif;fill:#9fb1cf}
+      .cmd{font:700 17px Arial,sans-serif;fill:#cdafff}.body{font:400 16px Arial,sans-serif;fill:#d6e0f3}
+      .section{font:700 19px Arial,sans-serif;fill:#42d7ff}.mono{font:500 14px monospace;fill:#b8c7df}
+    </style>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1872" height="1032" rx="28" fill="url(#grid)" opacity=".72"/>
+  <rect x="24" y="24" width="1872" height="1032" rx="28" fill="none" stroke="#263650" stroke-width="2"/>
+
+  <text x="960" y="70" text-anchor="middle" class="title">n8n Telegram Bot Workflow</text>
+  <text x="960" y="105" text-anchor="middle" class="subtitle">Hiddify API Integration + Subscription &amp; Payment System</text>
+
+  <!-- connector lines -->
+  <g fill="none" stroke="#8ea2c5" stroke-width="3" marker-end="url(#arrow)" opacity=".9">
+    <path d="M210 330H270"/>
+    <path d="M410 330H465"/>
+    <path d="M610 165H670"/>
+    <path d="M610 245H670"/>
+    <path d="M610 325H670"/>
+    <path d="M610 405H670"/>
+    <path d="M610 485H670"/>
+    <path d="M610 565H670"/>
+    <path d="M610 645H670"/>
+    <path d="M860 165H915"/><path d="M1060 165H1115"/>
+    <path d="M860 245H915"/><path d="M1060 245H1115"/>
+    <path d="M860 325H915"/><path d="M1060 325H1115"/>
+    <path d="M860 405H915"/><path d="M1060 405H1115"/>
+    <path d="M860 485H915"/>
+    <path d="M860 565H915"/>
+    <path d="M1060 565H1115"/>
+    <path d="M1270 565H1325"/>
+    <path d="M1455 565H1510"/>
+    <path d="M1650 565H1730"/>
+    <path d="M1270 165H1510"/>
+    <path d="M1270 245H1510"/>
+    <path d="M1270 325H1510"/>
+    <path d="M1270 405H1510"/>
+    <path d="M1270 645H1510"/>
+    <path d="M1455 645H1510"/>
+    <path d="M1650 645H1730"/>
+    <path d="M1270 725H1510"/>
+    <path d="M1650 725H1730"/>
+  </g>
+
+  <!-- Telegram Trigger -->
+  <g filter="url(#glow)">
+    <rect x="55" y="270" width="155" height="120" rx="18" fill="#0d1d28" stroke="#2be58a" stroke-width="3"/>
+    <circle cx="132" cy="310" r="25" fill="#20a8e8"/>
+    <path d="M116 311l34-14-8 31-10-9-7 10-2-15z" fill="#fff"/>
+  </g>
+  <text x="132" y="350" text-anchor="middle" class="nodeTitle">Telegram Trigger</text>
+  <text x="132" y="374" text-anchor="middle" class="small">Updates: Message</text>
+
+  <!-- Switch -->
+  <rect x="270" y="270" width="140" height="120" rx="18" fill="#161a1c" stroke="#e7bf32" stroke-width="3"/>
+  <circle cx="340" cy="310" r="20" fill="#e7bf32"/>
+  <path d="M328 310h24M340 310l-9-9M340 310l9 9M340 310v15" stroke="#101522" stroke-width="4" fill="none"/>
+  <text x="340" y="350" text-anchor="middle" class="nodeTitle">Switch</text>
+  <text x="340" y="374" text-anchor="middle" class="small">Command Router</text>
+
+  <!-- command nodes -->
+  <g>
+    <rect x="465" y="135" width="145" height="60" rx="12" fill="#17152a" stroke="#936cff" stroke-width="2"/>
+    <text x="537" y="161" text-anchor="middle" class="cmd">/start</text><text x="537" y="181" text-anchor="middle" class="small">Welcome &amp; Help</text>
+    <rect x="465" y="215" width="145" height="60" rx="12" fill="#17152a" stroke="#936cff" stroke-width="2"/>
+    <text x="537" y="241" text-anchor="middle" class="cmd">/newuser</text><text x="537" y="261" text-anchor="middle" class="small">Create New User</text>
+    <rect x="465" y="295" width="145" height="60" rx="12" fill="#17152a" stroke="#936cff" stroke-width="2"/>
+    <text x="537" y="321" text-anchor="middle" class="cmd">/status</text><text x="537" y="341" text-anchor="middle" class="small">Get User Status</text>
+    <rect x="465" y="375" width="145" height="60" rx="12" fill="#17152a" stroke="#936cff" stroke-width="2"/>
+    <text x="537" y="401" text-anchor="middle" class="cmd">/delete</text><text x="537" y="421" text-anchor="middle" class="small">Delete User</text>
+    <rect x="465" y="455" width="145" height="60" rx="12" fill="#17152a" stroke="#936cff" stroke-width="2"/>
+    <text x="537" y="481" text-anchor="middle" class="cmd">/buy</text><text x="537" y="501" text-anchor="middle" class="small">Show Plans</text>
+    <rect x="465" y="535" width="145" height="60" rx="12" fill="#17152a" stroke="#936cff" stroke-width="2"/>
+    <text x="537" y="561" text-anchor="middle" class="cmd">/payment</text><text x="537" y="581" text-anchor="middle" class="small">Process Payment</text>
+    <rect x="465" y="615" width="145" height="60" rx="12" fill="#17152a" stroke="#936cff" stroke-width="2"/>
+    <text x="537" y="641" text-anchor="middle" class="cmd">/myorders</text><text x="537" y="661" text-anchor="middle" class="small">My Subscriptions</text>
+  </g>
+
+  <!-- HTTP/Function nodes -->
+  <g>
+    <rect x="670" y="135" width="190" height="60" rx="12" fill="#0b2032" stroke="#1bb7ff" stroke-width="2"/>
+    <text x="765" y="161" text-anchor="middle" class="nodeTitle">HTTP Request</text><text x="765" y="181" text-anchor="middle" class="mono">Hiddify: create-user</text>
+    <rect x="670" y="215" width="190" height="60" rx="12" fill="#0b2032" stroke="#1bb7ff" stroke-width="2"/>
+    <text x="765" y="241" text-anchor="middle" class="nodeTitle">HTTP Request</text><text x="765" y="261" text-anchor="middle" class="mono">Hiddify: get-user</text>
+    <rect x="670" y="295" width="190" height="60" rx="12" fill="#0b2032" stroke="#1bb7ff" stroke-width="2"/>
+    <text x="765" y="321" text-anchor="middle" class="nodeTitle">HTTP Request</text><text x="765" y="341" text-anchor="middle" class="mono">Hiddify: delete-user</text>
+    <rect x="670" y="375" width="190" height="60" rx="12" fill="#0e1e2d" stroke="#20a7ff" stroke-width="2"/>
+    <text x="765" y="401" text-anchor="middle" class="nodeTitle">Function</text><text x="765" y="421" text-anchor="middle" class="small">Load Plans</text>
+    <rect x="670" y="455" width="190" height="60" rx="12" fill="#241d0d" stroke="#f0a42d" stroke-width="2"/>
+    <text x="765" y="481" text-anchor="middle" class="nodeTitle">Function</text><text x="765" y="501" text-anchor="middle" class="small">Create Payment Request</text>
+    <rect x="670" y="535" width="190" height="60" rx="12" fill="#241d0d" stroke="#f0a42d" stroke-width="2"/>
+    <text x="765" y="561" text-anchor="middle" class="nodeTitle">Function</text><text x="765" y="581" text-anchor="middle" class="small">Get Orders</text>
+  </g>
+
+  <!-- Set nodes -->
+  <g>
+    <rect x="915" y="135" width="145" height="60" rx="12" fill="#10261d" stroke="#2be58a" stroke-width="2"/>
+    <text x="987" y="161" text-anchor="middle" class="nodeTitle">Set</text><text x="987" y="181" text-anchor="middle" class="small">Format Response</text>
+    <rect x="915" y="215" width="145" height="60" rx="12" fill="#10261d" stroke="#2be58a" stroke-width="2"/>
+    <text x="987" y="241" text-anchor="middle" class="nodeTitle">Set</text><text x="987" y="261" text-anchor="middle" class="small">Format Status</text>
+    <rect x="915" y="295" width="145" height="60" rx="12" fill="#10261d" stroke="#2be58a" stroke-width="2"/>
+    <text x="987" y="321" text-anchor="middle" class="nodeTitle">Set</text><text x="987" y="341" text-anchor="middle" class="small">Format Delete</text>
+    <rect x="915" y="375" width="145" height="60" rx="12" fill="#10261d" stroke="#2be58a" stroke-width="2"/>
+    <text x="987" y="401" text-anchor="middle" class="nodeTitle">Set</text><text x="987" y="421" text-anchor="middle" class="small">Format Plans</text>
+    <rect x="915" y="535" width="145" height="60" rx="12" fill="#10261d" stroke="#2be58a" stroke-width="2"/>
+    <text x="987" y="561" text-anchor="middle" class="nodeTitle">Set</text><text x="987" y="581" text-anchor="middle" class="small">Format Orders</text>
+  </g>
+
+  <!-- Payment lane -->
+  <rect x="915" y="455" width="145" height="60" rx="12" fill="#0b2032" stroke="#1bb7ff" stroke-width="2"/>
+  <text x="987" y="481" text-anchor="middle" class="nodeTitle">HTTP Request</text><text x="987" y="501" text-anchor="middle" class="small">Payment Gateway</text>
+  <rect x="1115" y="535" width="155" height="60" rx="12" fill="#241d0d" stroke="#f0a42d" stroke-width="2"/>
+  <text x="1192" y="561" text-anchor="middle" class="nodeTitle">Function</text><text x="1192" y="581" text-anchor="middle" class="small">Save Payment</text>
+
+  <!-- Webhook -->
+  <rect x="915" y="615" width="145" height="60" rx="12" fill="#24111d" stroke="#ff4f93" stroke-width="2"/>
+  <text x="987" y="641" text-anchor="middle" class="nodeTitle">Webhook</text><text x="987" y="661" text-anchor="middle" class="small">Payment Callback</text>
+  <path d="M1060 645H1115" fill="none" stroke="#8ea2c5" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="1115" y="615" width="155" height="60" rx="12" fill="#241d0d" stroke="#f0a42d" stroke-width="2"/>
+  <text x="1192" y="641" text-anchor="middle" class="nodeTitle">Function</text><text x="1192" y="661" text-anchor="middle" class="small">Verify Payment</text>
+
+  <rect x="1325" y="535" width="130" height="60" rx="12" fill="#0b2032" stroke="#1bb7ff" stroke-width="2"/>
+  <text x="1390" y="561" text-anchor="middle" class="nodeTitle">Hiddify API</text><text x="1390" y="581" text-anchor="middle" class="small">Provision User</text>
+  <rect x="1325" y="615" width="130" height="60" rx="12" fill="#10261d" stroke="#2be58a" stroke-width="2"/>
+  <text x="1390" y="641" text-anchor="middle" class="nodeTitle">Set</text><text x="1390" y="661" text-anchor="middle" class="small">Success Message</text>
+
+  <!-- Database -->
+  <rect x="1510" y="135" width="140" height="540" rx="22" fill="#151426" stroke="#8065dc" stroke-width="2"/>
+  <ellipse cx="1580" cy="175" rx="45" ry="15" fill="#6e56ca"/>
+  <path d="M1535 175v55c0 9 20 15 45 15s45-6 45-15v-55" fill="#33286b" stroke="#8065dc" stroke-width="2"/>
+  <text x="1580" y="280" text-anchor="middle" class="nodeTitle">Database</text>
+  <text x="1530" y="320" class="body">• Users</text><text x="1530" y="350" class="body">• Plans</text>
+  <text x="1530" y="380" class="body">• Orders</text><text x="1530" y="410" class="body">• Payments</text>
+  <text x="1530" y="440" class="body">• Subscriptions</text>
+  <text x="1580" y="500" text-anchor="middle" class="small">PostgreSQL / MySQL</text>
+
+  <!-- Telegram Send -->
+  <rect x="1730" y="300" width="140" height="130" rx="18" fill="#0c1e31" stroke="#1bb7ff" stroke-width="3"/>
+  <circle cx="1800" cy="340" r="25" fill="#20a8e8"/>
+  <path d="M1784 341l34-14-8 31-10-9-7 10-2-15z" fill="#fff"/>
+  <text x="1800" y="385" text-anchor="middle" class="nodeTitle">Telegram Send</text>
+  <text x="1800" y="407" text-anchor="middle" class="small">Send Message</text>
+
+  <!-- left legend -->
+  <rect x="45" y="720" width="500" height="270" rx="20" fill="#09111f" stroke="#273650"/>
+  <text x="70" y="755" class="section">Commands</text>
+  <text x="70" y="790" class="cmd">/start</text><text x="185" y="790" class="body">Welcome &amp; Help</text>
+  <text x="70" y="820" class="cmd">/newuser</text><text x="185" y="820" class="body">Create user via Hiddify</text>
+  <text x="70" y="850" class="cmd">/status</text><text x="185" y="850" class="body">Check user status</text>
+  <text x="70" y="880" class="cmd">/delete</text><text x="185" y="880" class="body">Delete user</text>
+  <text x="70" y="910" class="cmd">/buy</text><text x="185" y="910" class="body">Show subscription plans</text>
+  <text x="70" y="940" class="cmd">/payment</text><text x="185" y="940" class="body">Start payment process</text>
+  <text x="70" y="970" class="cmd">/myorders</text><text x="185" y="970" class="body">View orders &amp; subscriptions</text>
+
+  <!-- bottom center -->
+  <rect x="575" y="720" width="520" height="270" rx="20" fill="#09111f" stroke="#273650"/>
+  <text x="600" y="755" class="section">Subscription Plans (Example)</text>
+  <text x="600" y="795" class="body">1 Month</text><text x="760" y="795" class="body">30 Days</text><text x="900" y="795" class="body">$5</text>
+  <text x="600" y="830" class="body">3 Months</text><text x="760" y="830" class="body">90 Days</text><text x="900" y="830" class="body">$12</text>
+  <text x="600" y="865" class="body">6 Months</text><text x="760" y="865" class="body">180 Days</text><text x="900" y="865" class="body">$20</text>
+  <text x="600" y="900" class="body">12 Months</text><text x="760" y="900" class="body">365 Days</text><text x="900" y="900" class="body">$35</text>
+  <text x="600" y="950" class="small">Payment provider: Stripe / Crypto / PayPal / Any API Gateway</text>
+
+  <!-- bottom right -->
+  <rect x="1125" y="720" width="720" height="270" rx="20" fill="#09111f" stroke="#273650"/>
+  <text x="1150" y="755" class="section">Workflow Summary &amp; Hiddify API</text>
+  <text x="1150" y="790" class="body">Payment webhook verifies the transaction → subscription is activated</text>
+  <text x="1150" y="820" class="body">→ Hiddify API provisions the VPN user → Telegram sends access details.</text>
+  <text x="1150" y="865" class="mono">POST /api/admin/create-user</text>
+  <text x="1150" y="895" class="mono">POST /api/admin/get-user</text>
+  <text x="1150" y="925" class="mono">POST /api/admin/delete-user</text>
+  <text x="1150" y="960" class="small">Secure • Scalable • Automated • Webhook-driven</text>
+</svg>
